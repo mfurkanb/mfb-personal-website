@@ -1,0 +1,1116 @@
+/* =========================================================
+   FURKAN BAYAZIT
+   PERSONAL WEBSITE
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+    --paper: #f1efe9;
+    --paper-dark: #e3dfd6;
+
+    --ink: #111111;
+    --muted: #726e67;
+
+    --red: #ff3b30;
+
+    --line: #c9c5bd;
+
+    --blue: #3559e0;
+    --green: #d8ff3e;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    font-family: "Instrument Sans", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    background: var(--red);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   GLOBAL LAYOUT
+   ========================================================= */
+
+.w {
+    width: min(92vw, 1440px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sec {
+    padding: 125px 0;
+
+    border-top: 1px solid var(--line);
+
+    scroll-margin-top: 40px;
+}
+
+.k {
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.split {
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 1fr)
+        minmax(0, 2fr);
+
+    gap: 5vw;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav {
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+
+    border-bottom: 1px solid var(--line);
+
+    font-size: 12px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+
+    position: relative;
+
+    z-index: 100;
+}
+
+
+/* Brand / Furkan Bayazit */
+
+.brand {
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+}
+
+.brand:hover {
+    color: var(--red);
+}
+
+
+/* Navigation Links */
+
+.nav nav {
+    display: flex;
+    align-items: center;
+
+    gap: 24px;
+}
+
+.nav nav a {
+    position: relative;
+
+    white-space: nowrap;
+}
+
+.nav nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    height: 1px;
+    width: 0;
+
+    background: var(--ink);
+
+    transition: width 0.25s ease;
+}
+
+.nav nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: calc(100vh - 88px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero h1 {
+    margin: 18px 0;
+
+    font-size: clamp(72px, 11vw, 170px);
+
+    line-height: 0.78;
+
+    letter-spacing: -0.075em;
+
+    font-weight: 600;
+
+    max-width: 100%;
+
+    transform-origin: left center;
+
+    will-change: transform;
+}
+
+.serif {
+    font-family: "Newsreader", serif;
+
+    font-style: italic;
+    font-weight: 300;
+
+    color: var(--red);
+}
+
+.sub {
+    max-width: 550px;
+
+    align-self: flex-end;
+
+    margin-top: 35px;
+
+    font-size: 19px;
+    line-height: 1.55;
+
+    color: #373430;
+}
+
+
+/* =========================================================
+   LARGE SECTION TITLES
+   ========================================================= */
+
+.lead {
+    margin: 0 0 42px;
+
+    font-size: clamp(42px, 5.7vw, 82px);
+
+    line-height: 0.96;
+
+    letter-spacing: -0.045em;
+
+    font-weight: 600;
+}
+
+.copy {
+    max-width: 760px;
+
+    margin: 0;
+
+    font-size: 19px;
+    line-height: 1.65;
+
+    color: #373430;
+}
+
+
+/* =========================================================
+   EXPERIENCE + EDUCATION ROWS
+   ========================================================= */
+
+.rows {
+    margin-top: 65px;
+}
+
+.row {
+    display: grid;
+
+    grid-template-columns:
+        minmax(150px, 1.1fr)
+        minmax(0, 2.2fr)
+        minmax(100px, 0.7fr);
+
+    gap: 25px;
+
+    border-top: 1px solid var(--line);
+
+    padding: 30px 0;
+
+    transition:
+        padding-left 0.3s ease,
+        padding-right 0.3s ease;
+}
+
+.row:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+.row:hover {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.row h3 {
+    margin: 0;
+
+    font-size: 20px;
+    line-height: 1.25;
+
+    font-weight: 600;
+}
+
+.row p {
+    margin: 0;
+
+    color: #4e4b46;
+
+    line-height: 1.6;
+}
+
+.row p strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.yr {
+    text-align: right;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   MARKETING / SYSTEMS / PROJECT CARDS
+   ========================================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-top: 55px;
+}
+
+.card {
+    min-height: 410px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #171717;
+    color: #f7f5ef;
+
+    transition:
+        transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-radius 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+/* Full Funnel */
+
+.card:nth-child(1) {
+    background: #171717;
+    color: #f7f5ef;
+}
+
+
+/* Budget & Reporting */
+
+.card:nth-child(2) {
+    background: var(--green);
+    color: #111111;
+}
+
+
+/* Digital Projects */
+
+.card:nth-child(3) {
+    background: var(--blue);
+    color: #ffffff;
+}
+
+
+/* SEO / GEO / AI */
+
+.card:nth-child(4) {
+    background: #e3ded4;
+    color: #111111;
+}
+
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-radius: 20px;
+}
+
+.card .k {
+    opacity: 0.75;
+}
+
+.card h3 {
+    margin: 0;
+
+    max-width: 600px;
+
+    font-size: clamp(36px, 4vw, 60px);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.045em;
+}
+
+.card p {
+    max-width: 520px;
+
+    margin: 22px 0 0;
+
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   GORMEZDEN GELME
+   ========================================================= */
+
+.story {
+    padding: 145px 0;
+
+    background: #080808;
+
+    color: #eeeeee;
+
+    scroll-margin-top: 40px;
+}
+
+.story .k {
+    color: #9e9e9e;
+}
+
+.story h2 {
+    margin: 0 0 32px;
+
+    font-size: clamp(58px, 8vw, 120px);
+
+    line-height: 0.84;
+
+    letter-spacing: -0.06em;
+}
+
+.story p {
+    max-width: 680px;
+
+    margin: 0;
+
+    color: #c5c5c5;
+
+    font-size: 19px;
+    line-height: 1.65;
+}
+
+
+/* Tweet container */
+
+.tweet {
+    width: 100%;
+    max-width: 650px;
+
+    min-height: 280px;
+
+    margin-top: 50px;
+}
+
+.twitter-tweet {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
+/* Fallback X link */
+
+.tweet > blockquote > a {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid #777777;
+
+    color: #eeeeee;
+}
+
+
+/* =========================================================
+   TOOLKIT
+   ========================================================= */
+
+.skills {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+
+    gap: 55px 30px;
+
+    margin-top: 60px;
+}
+
+
+/*
+   First row:
+   Media / Measurement / Marketing Tech
+*/
+
+.sg:nth-child(1),
+.sg:nth-child(2),
+.sg:nth-child(3) {
+    grid-column: span 2;
+}
+
+
+/*
+   Second row:
+   Data & Development / AI & Search
+*/
+
+.sg:nth-child(4) {
+    grid-column: 1 / span 3;
+}
+
+.sg:nth-child(5) {
+    grid-column: 4 / span 3;
+}
+
+.sg h3 {
+    margin: 0 0 22px;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+
+    font-weight: 700;
+}
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+.tag {
+    padding: 10px 13px;
+
+    border: 1px solid var(--line);
+
+    font-size: 14px;
+
+    cursor: default;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.tag:hover {
+    background: var(--ink);
+
+    border-color: var(--ink);
+
+    color: var(--paper);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BEYOND WORK
+   ========================================================= */
+
+.beyond {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-top: 55px;
+}
+
+.pc {
+    min-height: 330px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border: 1px solid var(--line);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-radius 0.35s ease;
+}
+
+.pc:hover {
+    transform: translateY(-5px);
+
+    border-radius: 14px;
+}
+
+.pc h3 {
+    margin: 0;
+
+    font-size: clamp(32px, 3vw, 42px);
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+.pc p {
+    margin-top: 18px;
+
+    max-width: 600px;
+
+    font-size: 17px;
+    line-height: 1.55;
+
+    color: #55514c;
+}
+
+.wide {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   LANGUAGES
+   ========================================================= */
+
+.lang {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 12px 0;
+
+    border-top: 1px solid var(--line);
+
+    font-size: 14px;
+}
+
+.lang:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+.lang strong {
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   TRAVEL MAP
+   ========================================================= */
+
+.travel-map {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 40px auto 0;
+
+    overflow: hidden;
+}
+
+.world-map {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    opacity: 0.95;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact {
+    min-height: 68vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.big {
+    margin: 20px 0 0;
+
+    font-size: clamp(62px, 10.5vw, 160px);
+
+    line-height: 0.78;
+
+    letter-spacing: -0.07em;
+
+    font-weight: 600;
+}
+
+.contact > a {
+    width: fit-content;
+
+    margin-top: 45px;
+
+    padding-bottom: 4px;
+
+    border-bottom: 1px solid var(--ink);
+
+    font-size: 20px;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.contact > a:hover {
+    color: var(--red);
+
+    border-color: var(--red);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.foot {
+    min-height: 75px;
+
+    padding: 25px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid var(--line);
+
+    font-size: 12px;
+
+    letter-spacing: 0.03em;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+.rev {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+        transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.rev.in {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    /* Navigation */
+
+    .nav nav {
+        gap: 14px;
+    }
+
+
+    /* Toolkit */
+
+    .skills {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 45px;
+    }
+
+    .sg:nth-child(1),
+    .sg:nth-child(2),
+    .sg:nth-child(3),
+    .sg:nth-child(4),
+    .sg:nth-child(5) {
+        grid-column: auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* Global */
+
+    .w {
+        width: min(90vw, 1440px);
+    }
+
+    .sec {
+        padding: 85px 0;
+
+        scroll-margin-top: 20px;
+    }
+
+
+    /* Navigation */
+
+    .nav {
+        height: 72px;
+    }
+
+    .nav nav {
+        gap: 12px;
+    }
+
+    /*
+       Hide some nav links on smaller screens.
+       Contact and Beyond stay visible.
+    */
+
+    .nav nav a:nth-child(1),
+    .nav nav a:nth-child(2),
+    .nav nav a:nth-child(3) {
+        display: none;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: calc(100vh - 72px);
+    }
+
+    .hero h1 {
+        font-size: 18vw;
+
+        line-height: 0.8;
+    }
+
+    .sub {
+        max-width: 100%;
+
+        align-self: flex-start;
+
+        margin-top: 30px;
+
+        font-size: 17px;
+    }
+
+
+    /* Split Layout */
+
+    .split {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    /* Titles */
+
+    .lead {
+        font-size: clamp(42px, 12vw, 65px);
+    }
+
+
+    /* Experience */
+
+    .rows {
+        margin-top: 50px;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        padding: 25px 0;
+    }
+
+    .row:hover {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .yr {
+        text-align: left;
+
+        margin-top: 5px;
+    }
+
+
+    /* Project cards */
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: 350px;
+    }
+
+
+    /* Story */
+
+    .story {
+        padding: 95px 0;
+    }
+
+
+    /* Toolkit */
+
+    .skills {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .sg:nth-child(1),
+    .sg:nth-child(2),
+    .sg:nth-child(3),
+    .sg:nth-child(4),
+    .sg:nth-child(5) {
+        grid-column: auto;
+    }
+
+
+    /* Beyond */
+
+    .beyond {
+        grid-template-columns: 1fr;
+    }
+
+    .wide {
+        grid-column: auto;
+    }
+
+
+    /* Personal cards */
+
+    .pc {
+        min-height: 300px;
+    }
+
+
+    /* Contact */
+
+    .contact {
+        min-height: 60vh;
+    }
+
+
+    /* Footer */
+
+    .foot {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .brand {
+        font-size: 11px;
+    }
+
+    .nav nav a {
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 19vw;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .pc {
+        padding: 24px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}
+
+/* COUNTRY PHOTO TOOLTIP */
+
+#country-tooltip {
+    position: fixed;
+    display: none;
+    width: 240px;
+    background: #f1efe9;
+    border: 1px solid #111;
+    z-index: 9999;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+#country-tooltip img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.country-info {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.country-info strong {
+    font-size: 16px;
+    color: #111;
+}
+
+.country-info span {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Sadece ziyaret edilen ülkelerde hover efekti */
+
+.visited-country {
+    cursor: pointer;
+    transition: fill 0.15s ease;
+}
+
+.visited-country:hover {
+    fill: #d92f26 !important;
+}
