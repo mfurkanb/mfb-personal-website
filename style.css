@@ -1114,3 +1114,75 @@ textarea {
 .visited-country:hover {
     fill: #d92f26 !important;
 }
+/* =========================
+   DOWNLOAD CV BUTTON
+========================= */
+
+.cv-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    min-width: 250px;
+    padding: 11px 20px;
+
+    color: #111;
+    background: transparent;
+
+    border: 1px solid #111;
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.cv-download-btn:hover {
+    background: #111;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.cv-download-btn span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* LEFT DOCUMENT ICON */
+.cv-file-icon {
+    position: absolute;
+    left: 18px;
+
+    width: 17px;
+    height: 17px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* RIGHT DOWNLOAD ICON */
+.cv-icon {
+    position: absolute;
+    right: 18px;
+
+    width: 17px;
+    height: 17px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
